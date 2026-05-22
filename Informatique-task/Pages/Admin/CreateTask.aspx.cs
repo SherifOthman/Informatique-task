@@ -50,13 +50,16 @@ namespace Informatique_task.Pages.Admin
 
                 string filePath = null;
 
-                if (fileUpload.HasFile)
+                if (Request.Files.Count > 0 && Request.Files[0].ContentLength > 0)
                 {
-                    string fileName = Guid.NewGuid() + "_" + fileUpload.FileName;
-                    string path = Server.MapPath("~/Uploads/" + fileName);
+                    var postedFile = Request.Files[0];
+                    string fileName = Guid.NewGuid() + "_" + postedFile.FileName;
+                    string dir = Server.MapPath("~/Uploads");
 
-                    fileUpload.SaveAs(path);
+                    if (!System.IO.Directory.Exists(dir))
+                        System.IO.Directory.CreateDirectory(dir);
 
+                    postedFile.SaveAs(System.IO.Path.Combine(dir, fileName));
                     filePath = "/Uploads/" + fileName;
                 }
 
@@ -77,7 +80,15 @@ namespace Informatique_task.Pages.Admin
                 db.Tasks.Add(task);
                 db.SaveChanges();
 
-                Response.Redirect("~/Pages/Admin/Tasks.aspx");
+                lblMessage.CssClass = "success";
+                lblMessage.Text = "Task created successfully!";
+
+                txtTitle.Text = "";
+                txtDescription.Text = "";
+                ddlUsers.SelectedIndex = 0;
+
+                string script = "setTimeout(function(){ window.location.href='" + ResolveUrl("~/Pages/Admin/Tasks.aspx") + "'; }, 1500);";
+                ClientScript.RegisterStartupScript(GetType(), "redirect", script, true);
             }
             catch (Exception ex)
             {
