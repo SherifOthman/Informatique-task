@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Informatique_task.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Global.css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+<form id="form1" runat="server">
+
+<div class="navbar">
+    <div>
+        <strong style="font-size:18px;">TaskManager</strong>
+        <asp:HyperLink NavigateUrl="~/Pages/Admin/Dashboard.aspx" runat="server">Dashboard</asp:HyperLink>
+        <asp:HyperLink NavigateUrl="~/Pages/Admin/CreateTask.aspx" runat="server">Create Task</asp:HyperLink>
+    </div>
+    <asp:LinkButton ID="btnLogout" runat="server" CssClass="nav-logout" OnClick="btnLogout_Click">Logout</asp:LinkButton>
+</div>
+
+<div class="content">
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+</div>
+
+</form>
+
+</body>
+</html>
