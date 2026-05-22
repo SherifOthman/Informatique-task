@@ -23,10 +23,17 @@ a:hover { text-decoration:underline; }
 }
 .navbar a:hover { text-decoration:underline; }
 .nav-logout {
-    color:#ff6b6b !important;
+    color:#fff;
     font-weight:600;
+    background:#dc3545;
+    padding:6px 14px;
+    border-radius:4px;
+    text-decoration:none;
 }
-.nav-logout:hover { color:#ff4444 !important; }
+.nav-logout:hover {
+    background:#c82333;
+    text-decoration:none !important;
+}
 
 .content { padding:20px; }
 

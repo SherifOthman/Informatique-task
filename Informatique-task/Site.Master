@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Informatique_task.Site" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Informatique_task.Site" %>
 
 <!DOCTYPE html>
 
@@ -16,10 +16,10 @@
 <div class="navbar">
     <div>
         <strong style="font-size:18px;">TaskManager</strong>
-        <a href="~/Pages/Admin/Dashboard.aspx">Dashboard</a>
-        <a href="~/Pages/Admin/CreateTask.aspx">Create Task</a>
+        <asp:HyperLink NavigateUrl="~/Pages/Admin/Dashboard.aspx" runat="server">Dashboard</asp:HyperLink>
+        <asp:HyperLink NavigateUrl="~/Pages/Admin/CreateTask.aspx" runat="server">Create Task</asp:HyperLink>
     </div>
-    <a href="~/Pages/Auth/Login.aspx" class="nav-logout">Logout</a>
+    <asp:LinkButton ID="btnLogout" runat="server" CssClass="nav-logout" OnClick="btnLogout_Click">Logout</asp:LinkButton>
 </div>
 
 <div class="content">
