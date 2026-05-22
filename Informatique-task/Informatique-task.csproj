@@ -109,6 +109,8 @@
     <Content Include="Content\Global.css" />
     <Content Include="Content\Login.css" />
     <Content Include="Content\CreateTask.css" />
+    <Content Include="Content\Dashboard.css" />
+    <Content Include="Content\Tasks.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Pages\Admin\CreateTask.aspx" />
