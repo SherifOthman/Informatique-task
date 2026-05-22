@@ -5,9 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Global.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Login.css" />
 </head>
-<body>
+<body class="login-page">
 
 <form id="form1" runat="server">
 
@@ -16,25 +17,25 @@
 
     <asp:Label ID="lblError" runat="server" CssClass="error"></asp:Label>
 
-    <label>Username</label>
-    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+    <label class="form-label">Username</label>
+    <asp:TextBox ID="txtUsername" runat="server" CssClass="form-input"></asp:TextBox>
 
-    <label>Password</label>
-    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+    <label class="form-label">Password</label>
+    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-input"></asp:TextBox>
 
     <asp:Button ID="btnLogin" runat="server"
         Text="Login"
-        CssClass="btn-login"
+        CssClass="btn-primary"
         OnClick="btnLogin_Click" />
 
     <asp:Button ID="btnAdminFill" runat="server"
         Text="Admin"
-        CssClass="btn-fill"
+        CssClass="btn-secondary"
         OnClick="btnAdminFill_Click" />
 
     <asp:Button ID="btnMemberFill" runat="server"
         Text="Member"
-        CssClass="btn-fill"
+        CssClass="btn-secondary"
         OnClick="btnMemberFill_Click" />
 </div>
 
