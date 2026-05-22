@@ -8,6 +8,7 @@ Inherits="Informatique_task.Pages.Admin.Dashboard" %>
 
 <div>
     <p>Welcome, <%= Session["FullName"] %></p>
+    <p><asp:HyperLink NavigateUrl="~/Pages/Admin/Tasks.aspx" runat="server">View Tasks</asp:HyperLink></p>
 </div>
 
 </asp:Content>
