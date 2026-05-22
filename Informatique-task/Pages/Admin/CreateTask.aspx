@@ -15,35 +15,44 @@
 </div>
 
 <div class="create-task-form">
-    <label class="form-label">Title</label>
-    <asp:TextBox ID="txtTitle" runat="server" CssClass="form-input"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="rfvTitle" runat="server"
-        ControlToValidate="txtTitle"
-        ErrorMessage="Title is required."
-        CssClass="error" ValidationGroup="Create"
-        Display="Dynamic" />
 
-    <label class="form-label">Description</label>
-    <asp:TextBox ID="txtDescription" runat="server"
-        TextMode="MultiLine" Rows="4"
-        CssClass="form-input"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="rfvDescription" runat="server"
-        ControlToValidate="txtDescription"
-        ErrorMessage="Description is required."
-        CssClass="error" ValidationGroup="Create"
-        Display="Dynamic" />
+    <div class="field-group">
+        <label class="form-label">Title</label>
+        <asp:TextBox ID="txtTitle" runat="server" CssClass="form-input"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvTitle" runat="server"
+            ControlToValidate="txtTitle"
+            ErrorMessage="Title is required."
+            CssClass="error" ValidationGroup="Create"
+            Display="Dynamic" />
+    </div>
 
-    <label class="form-label">Assign To</label>
-    <asp:DropDownList ID="ddlUsers" runat="server" CssClass="form-input"></asp:DropDownList>
-    <asp:RequiredFieldValidator ID="rfvAssignTo" runat="server"
-        ControlToValidate="ddlUsers"
-        InitialValue="-- Select User --"
-        ErrorMessage="Please select a user."
-        CssClass="error" ValidationGroup="Create"
-        Display="Dynamic" />
+    <div class="field-group">
+        <label class="form-label">Description</label>
+        <asp:TextBox ID="txtDescription" runat="server"
+            TextMode="MultiLine" Rows="4"
+            CssClass="form-input"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvDescription" runat="server"
+            ControlToValidate="txtDescription"
+            ErrorMessage="Description is required."
+            CssClass="error" ValidationGroup="Create"
+            Display="Dynamic" />
+    </div>
 
-    <label class="form-label">Attachment</label>
-    <asp:FileUpload ID="fileUpload" runat="server" CssClass="form-input" />
+    <div class="field-group">
+        <label class="form-label">Assign To</label>
+        <asp:DropDownList ID="ddlUsers" runat="server" CssClass="form-input"></asp:DropDownList>
+        <asp:RequiredFieldValidator ID="rfvAssignTo" runat="server"
+            ControlToValidate="ddlUsers"
+            InitialValue="-- Select User --"
+            ErrorMessage="Please select a user."
+            CssClass="error" ValidationGroup="Create"
+            Display="Dynamic" />
+    </div>
+
+    <div class="field-group">
+        <label class="form-label">Attachment</label>
+        <asp:FileUpload ID="fileUpload" runat="server" CssClass="form-input" />
+    </div>
 
     <asp:Button ID="btnCreate" runat="server"
         Text="Create Task"

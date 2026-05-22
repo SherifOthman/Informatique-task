@@ -14,33 +14,41 @@
 
 <asp:Panel ID="pnlDetails" runat="server" CssClass="create-task-form">
 
-    <label class="form-label">Title</label>
-    <asp:TextBox ID="txtTitle" runat="server" CssClass="form-input"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="rfvTitle" runat="server"
-        ControlToValidate="txtTitle"
-        ErrorMessage="Title is required."
-        CssClass="error" ValidationGroup="Save"
-        Display="Dynamic" />
+    <div class="field-group">
+        <label class="form-label">Title</label>
+        <asp:TextBox ID="txtTitle" runat="server" CssClass="form-input"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvTitle" runat="server"
+            ControlToValidate="txtTitle"
+            ErrorMessage="Title is required."
+            CssClass="error" ValidationGroup="Save"
+            Display="Dynamic" />
+    </div>
 
-    <label class="form-label">Description</label>
-    <asp:TextBox ID="txtDescription" runat="server"
-        TextMode="MultiLine" Rows="4"
-        CssClass="form-input"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="rfvDescription" runat="server"
-        ControlToValidate="txtDescription"
-        ErrorMessage="Description is required."
-        CssClass="error" ValidationGroup="Save"
-        Display="Dynamic" />
+    <div class="field-group">
+        <label class="form-label">Description</label>
+        <asp:TextBox ID="txtDescription" runat="server"
+            TextMode="MultiLine" Rows="4"
+            CssClass="form-input"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvDescription" runat="server"
+            ControlToValidate="txtDescription"
+            ErrorMessage="Description is required."
+            CssClass="error" ValidationGroup="Save"
+            Display="Dynamic" />
+    </div>
 
-    <label class="form-label">Assigned To</label>
-    <asp:DropDownList ID="ddlUsers" runat="server" CssClass="form-input"></asp:DropDownList>
+    <div class="field-group">
+        <label class="form-label">Assigned To</label>
+        <asp:DropDownList ID="ddlUsers" runat="server" CssClass="form-input"></asp:DropDownList>
+    </div>
 
-    <label class="form-label">Status</label>
-    <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-input">
-        <asp:ListItem Value="New">New</asp:ListItem>
-        <asp:ListItem Value="InProgress">In Progress</asp:ListItem>
-        <asp:ListItem Value="Completed">Completed</asp:ListItem>
-    </asp:DropDownList>
+    <div class="field-group">
+        <label class="form-label">Status</label>
+        <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-input">
+            <asp:ListItem Value="New">New</asp:ListItem>
+            <asp:ListItem Value="InProgress">In Progress</asp:ListItem>
+            <asp:ListItem Value="Completed">Completed</asp:ListItem>
+        </asp:DropDownList>
+    </div>
 
     <div style="margin-bottom:16px;">
         <span class="form-label" style="display:inline;">Attachment: </span>
