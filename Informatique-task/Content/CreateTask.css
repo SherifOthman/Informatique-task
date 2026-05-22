@@ -1,5 +1,5 @@
 ﻿.create-task-form {
-    width: 500px;
+    max-width: 550px;
     margin: 20px auto;
     background: white;
     padding: 30px;
