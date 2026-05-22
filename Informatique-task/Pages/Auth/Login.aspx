@@ -7,7 +7,7 @@
     <title>Login</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body class="bg-light d-flex align-items-center" style="min-height:100vh;">
+<body class="bg-light d-flex align-items-center justify-content-center" style="min-height:100vh;">
 
 <form id="form1" runat="server">
 
@@ -36,12 +36,12 @@
 
         <div class="d-grid gap-2">
             <asp:Button ID="btnAdminFill" runat="server"
-                Text="Fill Admin (admin / Admin@123)"
+                Text="Admin"
                 CssClass="btn btn-outline-secondary btn-sm"
                 OnClientClick="document.getElementById('txtUsername').value='admin';document.getElementById('txtPassword').value='Admin@123';return false;" />
 
             <asp:Button ID="btnMemberFill" runat="server"
-                Text="Fill Member (ahmed / 123456)"
+                Text="Member"
                 CssClass="btn btn-outline-secondary btn-sm"
                 OnClientClick="document.getElementById('txtUsername').value='ahmed';document.getElementById('txtPassword').value='123456';return false;" />
         </div>
