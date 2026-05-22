@@ -53,8 +53,8 @@ namespace Informatique_task.Pages.Auth
                 }
 
                 Session["UserId"] = user.Id;
-                Session["Username"] = user.Username;
                 Session["Role"] = user.Role.ToString();
+                Session["FullName"] = user.FullName;
 
                 if(user.Role == UserRole.Admin)
                 {

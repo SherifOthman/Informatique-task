@@ -108,9 +108,13 @@
   <ItemGroup>
     <Content Include="Content\Global.css" />
     <Content Include="Content\Login.css" />
+    <Content Include="Content\CreateTask.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\Admin\CreateTask.aspx" />
+    <Content Include="Pages\Admin\Dashboard.aspx" />
     <Content Include="Pages\Auth\Login.aspx" />
+    <Content Include="Site.Master" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -129,9 +133,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-
     <Compile Include="Models\TaskItem.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Pages\Admin\CreateTask.aspx.cs">
+      <DependentUpon>CreateTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\CreateTask.aspx.designer.cs">
+      <DependentUpon>CreateTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Auth\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,9 +164,17 @@
     </Compile>
     <Compile Include="Seed\DbSeeder.cs" />
     <Compile Include="Services\PasswordService.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -160,7 +185,6 @@
   <ItemGroup>
     <Folder Include="Uploads\" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202605221622573_InitialCreate.resx">
       <DependentUpon>202605221622573_InitialCreate.cs</DependentUpon>
