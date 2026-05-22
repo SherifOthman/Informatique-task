@@ -51,7 +51,8 @@ namespace Informatique_task.Pages.Admin
 
             if (!string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                query = query.Where(t => t.Title.Contains(txtSearch.Text));
+                string term = txtSearch.Text;
+                query = query.Where(t => t.Title.Contains(term) || t.AssignedTo.FullName.Contains(term));
             }
 
             if(ddlUsers.SelectedIndex> 0)

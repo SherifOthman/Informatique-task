@@ -12,7 +12,7 @@
 
             <div class="filter-group">
                 <label class="form-label">Search</label>
-                <asp:TextBox ID="txtSearch" runat="server" CssClass="form-input"></asp:TextBox>
+                <asp:TextBox ID="txtSearch" runat="server" CssClass="form-input" placeholder="Search by name or title"></asp:TextBox>
             </div>
 
             <div class="filter-group">
