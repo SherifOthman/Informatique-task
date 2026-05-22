@@ -14,10 +14,11 @@
 <form id="form1" runat="server" enctype="multipart/form-data">
 
 <div class="navbar">
-    <div>
-        <strong style="font-size:18px;">TaskManager</strong>
-        <asp:HyperLink NavigateUrl="~/Pages/Admin/Dashboard.aspx" runat="server">Dashboard</asp:HyperLink>
-        <asp:HyperLink NavigateUrl="~/Pages/Admin/CreateTask.aspx" runat="server">Create Task</asp:HyperLink>
+    <div class="nav-left">
+        <span class="nav-brand">TaskManager</span>
+        <asp:HyperLink NavigateUrl="~/Pages/Admin/Dashboard.aspx" runat="server" CssClass="nav-link">Dashboard</asp:HyperLink>
+        <asp:HyperLink NavigateUrl="~/Pages/Admin/CreateTask.aspx" runat="server" CssClass="nav-link">Create Task</asp:HyperLink>
+        <asp:HyperLink NavigateUrl="~/Pages/Admin/Tasks.aspx" runat="server" CssClass="nav-link">Tasks</asp:HyperLink>
     </div>
     <asp:LinkButton ID="btnLogout" runat="server" CssClass="nav-logout" OnClick="btnLogout_Click">Logout</asp:LinkButton>
 </div>
