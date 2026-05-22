@@ -16,8 +16,6 @@ namespace Informatique_task.Pages.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Page.Form.Attributes["enctype"] = "multipart/form-data";
-
             if (!Page.IsPostBack)
                 LoadUsers();
         }
