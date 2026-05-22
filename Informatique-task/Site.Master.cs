@@ -1,26 +1,20 @@
 ﻿using System;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Informatique_task
 {
-    public partial class Site : MasterPage
+    public partial class Site : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string currentPage = Request.Url.AbsolutePath.ToLower();
-            var nav = FindControl("sidebarNav") as Control;
-            if (nav == null) return;
+            string p = Request.Url.AbsolutePath.ToLower();
+            string activeClass = " sidebar-link active";
 
-            foreach (Control ctrl in nav.Controls)
-            {
-                if (ctrl is HyperLink link)
-                {
-                    string linkUrl = ResolveUrl(link.NavigateUrl).ToLower();
-                    if (currentPage == linkUrl || currentPage.StartsWith(linkUrl.TrimEnd('/')))
-                        link.CssClass = (link.CssClass + " active").Trim();
-                }
-            }
+            if (p.Contains("dashboard"))
+                lnkDashboard.CssClass += activeClass;
+            else if (p.Contains("createtask"))
+                lnkCreate.CssClass += activeClass;
+            else if (p.Contains("tasks"))
+                lnkTasks.CssClass += activeClass;
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
