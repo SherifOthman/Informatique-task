@@ -26,7 +26,7 @@ namespace Informatique_task.Data.Configurations
 
             Property(t => t.AttachmentPath)
                 .HasMaxLength(500);
-
+            
             Property(t => t.AssignedDate)
                 .IsRequired();
 

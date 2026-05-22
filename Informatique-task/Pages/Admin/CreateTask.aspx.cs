@@ -2,11 +2,8 @@
 using Informatique_task.Enums;
 using Informatique_task.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Informatique_task.Pages.Admin
 {
@@ -38,8 +35,6 @@ namespace Informatique_task.Pages.Admin
         {
             try
             {
-
-
                 int userId = int.Parse(ddlUsers.SelectedValue);
 
                 if (userId == 0)
@@ -50,17 +45,22 @@ namespace Informatique_task.Pages.Admin
 
                 string filePath = null;
 
-                if (Request.Files.Count > 0 && Request.Files[0].ContentLength > 0)
+                if (fileUpload.HasFile)
                 {
-                    var postedFile = Request.Files[0];
-                    string fileName = Guid.NewGuid() + "_" + postedFile.FileName;
+                    string fileName = Guid.NewGuid() + "_" + fileUpload.FileName;
                     string dir = Server.MapPath("~/Uploads");
 
                     if (!System.IO.Directory.Exists(dir))
                         System.IO.Directory.CreateDirectory(dir);
 
-                    postedFile.SaveAs(System.IO.Path.Combine(dir, fileName));
+                    fileUpload.SaveAs(System.IO.Path.Combine(dir, fileName));
                     filePath = "/Uploads/" + fileName;
+                }
+
+                if (Session["UserId"] == null)
+                {
+                    lblMessage.Text = "Session expired. Please login again.";
+                    return;
                 }
 
                 var task = new TaskItem
@@ -69,26 +69,16 @@ namespace Informatique_task.Pages.Admin
                     Description = txtDescription.Text,
                     AssignedToId = userId,
                     CreatedById = (int)Session["UserId"],
-
                     Status = TaskStatus.New,
                     CreatedDate = DateTime.Now,
                     AssignedDate = DateTime.Now,
-
                     AttachmentPath = filePath
                 };
 
                 db.Tasks.Add(task);
                 db.SaveChanges();
 
-                lblMessage.CssClass = "success";
-                lblMessage.Text = "Task created successfully!";
-
-                txtTitle.Text = "";
-                txtDescription.Text = "";
-                ddlUsers.SelectedIndex = 0;
-
-                string script = "setTimeout(function(){ window.location.href='" + ResolveUrl("~/Pages/Admin/Tasks.aspx") + "'; }, 1500);";
-                ClientScript.RegisterStartupScript(GetType(), "redirect", script, true);
+                Response.Redirect(ResolveUrl("~/Pages/Admin/Tasks.aspx"));
             }
             catch (Exception ex)
             {
