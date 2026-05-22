@@ -44,14 +44,14 @@
     </div>
 
     <div style="display:flex;gap:12px;">
+        <asp:HyperLink NavigateUrl="~/Pages/Admin/Tasks.aspx"
+            runat="server" CssClass="btn-secondary"
+            style="flex:1;text-align:center;text-decoration:none;margin:0;">Back to Tasks</asp:HyperLink>
         <asp:Button ID="btnSave" runat="server"
             Text="Save Changes"
             CssClass="btn-primary"
             OnClick="btnSave_Click"
             style="flex:1;" />
-        <asp:HyperLink NavigateUrl="~/Pages/Admin/Tasks.aspx"
-            runat="server" CssClass="btn-secondary"
-            style="flex:1;text-align:center;text-decoration:none;margin:0;">Back to Tasks</asp:HyperLink>
     </div>
 
 </asp:Panel>
