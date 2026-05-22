@@ -19,11 +19,11 @@
     <div class="field-group">
         <label class="form-label">Title</label>
         <asp:TextBox ID="txtTitle" runat="server" CssClass="form-input"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="rfvTitle" runat="server"
+        <div><asp:RequiredFieldValidator ID="rfvTitle" runat="server"
             ControlToValidate="txtTitle"
             ErrorMessage="Title is required."
             CssClass="error" ValidationGroup="Create"
-            Display="Dynamic" />
+            Display="Dynamic" /></div>
     </div>
 
     <div class="field-group">
@@ -31,22 +31,22 @@
         <asp:TextBox ID="txtDescription" runat="server"
             TextMode="MultiLine" Rows="4"
             CssClass="form-input"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="rfvDescription" runat="server"
+        <div><asp:RequiredFieldValidator ID="rfvDescription" runat="server"
             ControlToValidate="txtDescription"
             ErrorMessage="Description is required."
             CssClass="error" ValidationGroup="Create"
-            Display="Dynamic" />
+            Display="Dynamic" /></div>
     </div>
 
     <div class="field-group">
         <label class="form-label">Assign To</label>
         <asp:DropDownList ID="ddlUsers" runat="server" CssClass="form-input"></asp:DropDownList>
-        <asp:RequiredFieldValidator ID="rfvAssignTo" runat="server"
+        <div><asp:RequiredFieldValidator ID="rfvAssignTo" runat="server"
             ControlToValidate="ddlUsers"
             InitialValue="-- Select User --"
             ErrorMessage="Please select a user."
             CssClass="error" ValidationGroup="Create"
-            Display="Dynamic" />
+            Display="Dynamic" /></div>
     </div>
 
     <div class="field-group">
