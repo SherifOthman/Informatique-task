@@ -91,6 +91,18 @@ namespace Informatique_task.Pages.Admin
 
             if (task.Status == TaskStatus.New)
             {
+                if (string.IsNullOrWhiteSpace(txtTitle.Text))
+                {
+                    lblMessage.CssClass = "error";
+                    lblMessage.Text = "Title is required.";
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtDescription.Text))
+                {
+                    lblMessage.CssClass = "error";
+                    lblMessage.Text = "Description is required.";
+                    return;
+                }
                 task.Title = txtTitle.Text;
                 task.Description = txtDescription.Text;
             }
