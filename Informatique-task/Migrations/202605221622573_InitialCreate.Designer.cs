@@ -13,7 +13,7 @@ namespace Informatique_task.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202605221456285_InitialCreate"; }
+            get { return "202605221622573_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

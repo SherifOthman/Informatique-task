@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Informatique_task.Enums;
+using Informatique_task.Models.TaskManagementSystem.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,10 +14,12 @@ namespace Informatique_task.Models
         public string Description { get; set; }
         public DateTime CreatedDate {  get; set; }
         public DateTime AssignedDate { get; set; }
+
+        public TaskStatus Status { get; set; }
         public string AttachmentPath { get; set; }
-        public string CreatedById { get; set; }
-        public virtual ApplicationUser CreatedBy { get; set; }
-        public string AssignedToId { get; set; }
-        public virtual ApplicationUser AssignedTo { get; set; }
+        public int CreatedById { get; set; }
+        public virtual User CreatedBy { get; set; }
+        public int AssignedToId { get; set; }
+        public virtual User AssignedTo { get; set; }
     }
 }
