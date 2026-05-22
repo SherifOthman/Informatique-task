@@ -11,9 +11,9 @@
 
 <form id="form1" runat="server">
 
-<div class="container" style="max-width:400px;">
+<div class="container" style="max-width:900px;margin:0 auto;">
 
-    <div class="card shadow p-4">
+    <div class="card shadow p-4 w-100">
 
         <h3 class="text-center mb-3">Login</h3>
 
