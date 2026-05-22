@@ -113,49 +113,6 @@ html, body {
     padding: 24px;
     background: #f0f2f5;
 }
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    height: 100%;
-}
-.nav-brand {
-    font-weight: 700;
-    font-size: 18px;
-    margin-right: 12px;
-}
-.nav-link {
-    color: rgba(255,255,255,.8);
-    text-decoration: none;
-    padding: 0 14px;
-    height: 56px;
-    line-height: 56px;
-    font-weight: 500;
-    font-size: 14px;
-    transition: background .15s, color .15s;
-}
-.nav-link:hover {
-    background: rgba(255,255,255,.12);
-    color: #fff;
-    text-decoration: none;
-}
-
-.nav-logout {
-    color: #fff;
-    font-weight: 600;
-    background: #dc3545;
-    padding: 8px 14px;
-    border-radius: 4px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-}
-
-.nav-logout:hover {
-    background: #c82333;
-    text-decoration: none !important;
-}
-
 /* =========================
    PAGE CONTENT
 ========================= */

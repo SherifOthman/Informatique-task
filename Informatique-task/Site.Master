@@ -15,7 +15,7 @@
 
 <div class="layout">
     <div class="sidebar">
-        <div class="sidebar-brand">TaskManager</div>
+        <div class="sidebar-brand">Task Manager</div>
         <nav ID="sidebarNav" class="sidebar-nav" runat="server">
             <asp:HyperLink NavigateUrl="~/Pages/Admin/Dashboard.aspx" runat="server" CssClass="sidebar-link">Dashboard</asp:HyperLink>
             <asp:HyperLink NavigateUrl="~/Pages/Admin/CreateTask.aspx" runat="server" CssClass="sidebar-link">Create Task</asp:HyperLink>
