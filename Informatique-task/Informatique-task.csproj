@@ -115,6 +115,7 @@
     <Content Include="Global.asax" />
     <Content Include="Pages\Admin\CreateTask.aspx" />
     <Content Include="Pages\Admin\Dashboard.aspx" />
+    <Content Include="Pages\Admin\TaskDetails.aspx" />
     <Content Include="Pages\Admin\Tasks.aspx" />
     <Content Include="Pages\Auth\Login.aspx" />
     <Content Include="Site.Master">
@@ -153,6 +154,13 @@
     </Compile>
     <Compile Include="Pages\Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\TaskDetails.aspx.cs">
+      <DependentUpon>TaskDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\TaskDetails.aspx.designer.cs">
+      <DependentUpon>TaskDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\Tasks.aspx.cs">
       <DependentUpon>Tasks.aspx</DependentUpon>
