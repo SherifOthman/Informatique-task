@@ -4,6 +4,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/CreateTask.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/TaskDetails.css" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -50,27 +51,25 @@
         </asp:DropDownList>
     </div>
 
-    <div style="margin-bottom:16px;">
-        <span class="form-label" style="display:inline;">Attachment: </span>
+    <div class="attachment-row">
+        <span class="form-label">Attachment: </span>
         <asp:HyperLink ID="lnkAttachment" runat="server" Text="Download" />
         <asp:Label ID="lblNoAttachment" runat="server" Text="None" />
     </div>
 
-    <div style="margin-bottom:16px;color:#777;font-size:13px;">
+    <div class="dates-row">
         Created: <asp:Label ID="lblCreatedDate" runat="server" /><br />
         Assigned: <asp:Label ID="lblAssignedDate" runat="server" />
     </div>
 
-    <div style="display:flex;gap:12px;">
+    <div class="actions-row">
         <asp:HyperLink NavigateUrl="~/Pages/Admin/Tasks.aspx"
-            runat="server" CssClass="btn-secondary"
-            style="flex:1;text-align:center;text-decoration:none;margin:0;">Back to Tasks</asp:HyperLink>
+            runat="server" CssClass="btn-back">Back to Tasks</asp:HyperLink>
         <asp:Button ID="btnSave" runat="server"
             Text="Save Changes"
             CssClass="btn-primary"
             OnClick="btnSave_Click"
-            ValidationGroup="Save"
-            style="flex:1;" />
+            ValidationGroup="Save" />
     </div>
 
 </asp:Panel>
