@@ -3,7 +3,7 @@
     Inherits="Informatique_task.Pages.Admin.CreateTask" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link rel="stylesheet" type="text/css" href="~/Content/CreateTask.css" runat="server" />
+    <link rel="stylesheet" type="text/css" href='<%= ResolveClientUrl("~/Content/CreateTask.css") %>' />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
