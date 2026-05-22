@@ -21,12 +21,14 @@ namespace Informatique_task.Pages.Auth
         {
             txtUsername.Text = "admin";
             txtPassword.Text = "Admin@123";
+            txtPassword.Attributes["value"] = "Admin@123";
         }
 
         protected void btnMemberFill_Click(object sender, EventArgs e)
         {
             txtUsername.Text = "ahmed";
             txtPassword.Text = "123456";
+            txtPassword.Attributes["value"] = "123456";
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
