@@ -28,6 +28,8 @@
         CssClass="btn-primary"
         OnClick="btnLogin_Click" />
 
+    <hr style="border:none;border-top:1px solid #eee;margin:8px 0 12px 0;" />
+
     <asp:Button ID="btnAdminFill" runat="server"
         Text="Admin"
         CssClass="btn-secondary"
