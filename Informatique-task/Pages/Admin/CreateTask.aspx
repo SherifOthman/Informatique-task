@@ -10,7 +10,9 @@
 
 <h2 class="page-title">Create New Task</h2>
 
-<asp:Label ID="lblMessage" runat="server" CssClass="error"></asp:Label>
+<div style="text-align:center;">
+    <asp:Label ID="lblMessage" runat="server" CssClass="error"></asp:Label>
+</div>
 
 <div class="create-task-form">
     <label class="form-label">Title</label>

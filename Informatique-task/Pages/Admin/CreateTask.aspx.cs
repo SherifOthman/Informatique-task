@@ -79,6 +79,14 @@ namespace Informatique_task.Pages.Admin
 
                 lblMessage.CssClass = "success";
                 lblMessage.Text = "Task created successfully!";
+
+                txtTitle.Text = "";
+                txtDescription.Text = "";
+                ddlUsers.SelectedIndex = 0;
+                fileUpload.Attributes.Clear();
+
+                string script = "setTimeout(function(){ window.location.href='Tasks.aspx'; }, 1500);";
+                ClientScript.RegisterStartupScript(GetType(), "redirect", script, true);
             }
             catch (Exception ex)
             {
