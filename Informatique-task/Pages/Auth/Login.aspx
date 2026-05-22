@@ -30,12 +30,12 @@
     <asp:Button ID="btnAdminFill" runat="server"
         Text="Admin"
         CssClass="btn-fill"
-        OnClientClick="document.getElementById('txtUsername').value='admin';document.getElementById('txtPassword').value='Admin@123';return false;" />
+        OnClick="btnAdminFill_Click" />
 
     <asp:Button ID="btnMemberFill" runat="server"
         Text="Member"
         CssClass="btn-fill"
-        OnClientClick="document.getElementById('txtUsername').value='ahmed';document.getElementById('txtPassword').value='123456';return false;" />
+        OnClick="btnMemberFill_Click" />
 </div>
 
 </form>

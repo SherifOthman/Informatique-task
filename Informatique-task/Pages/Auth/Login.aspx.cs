@@ -17,6 +17,18 @@ namespace Informatique_task.Pages.Auth
 
         }
 
+        protected void btnAdminFill_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "admin";
+            txtPassword.Text = "Admin@123";
+        }
+
+        protected void btnMemberFill_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "ahmed";
+            txtPassword.Text = "123456";
+        }
+
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             using(var db = new ApplicationDbContext())
