@@ -14,7 +14,6 @@ namespace Informatique_task.Models
         public string Description { get; set; }
         public DateTime CreatedDate {  get; set; }
         public DateTime AssignedDate { get; set; }
-
         public TaskStatus Status { get; set; }
         public string AttachmentPath { get; set; }
         public int CreatedById { get; set; }

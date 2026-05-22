@@ -1,90 +1,217 @@
-* { margin:0; padding:0; box-sizing:border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background:#f0f2f5;
+    background: #f0f2f5;
+    color: #333;
 }
 
-a { color:#0d6efd; text-decoration:none; }
-a:hover { text-decoration:underline; }
+/* =========================
+   LINKS
+========================= */
+
+a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
-    background:#0d6efd;
-    padding:15px;
-    color:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-.navbar a {
-    color:white;
-    margin-left:15px;
-    text-decoration:none;
-}
-.navbar a:hover { text-decoration:underline; }
-.nav-logout {
-    color:#fff;
-    font-weight:600;
-    background:#dc3545;
-    padding:6px 14px;
-    border-radius:4px;
-    text-decoration:none;
-}
-.nav-logout:hover {
-    background:#c82333;
-    text-decoration:none !important;
+    background: #0d6efd;
+    padding: 15px 24px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.content { padding:20px; }
+.navbar a {
+    color: white;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.nav-logout {
+    color: #fff;
+    font-weight: 600;
+    background: #dc3545;
+    padding: 8px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-logout:hover {
+    background: #c82333;
+    text-decoration: none !important;
+}
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.content {
+    padding: 24px;
+}
+
+.page-title {
+    margin-bottom: 24px;
+    color: #333;
+}
+
+/* =========================
+   BUTTONS
+========================= */
 
 .btn-primary {
-    display:block;
-    width:100%;
-    padding:10px;
-    background:#0d6efd;
-    color:#fff;
-    border:none;
-    border-radius:4px;
-    font-size:16px;
-    cursor:pointer;
-    margin-bottom:10px;
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #0d6efd;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 0px;
 }
-.btn-primary:hover { background:#0b5ed7; }
+
+.btn-primary:hover {
+    background: #0b5ed7;
+}
 
 .btn-secondary {
-    display:block;
-    width:100%;
-    padding:8px;
-    background:#fff;
-    color:#555;
-    border:1px solid #ccc;
-    border-radius:4px;
-    font-size:13px;
-    cursor:pointer;
-    margin-bottom:8px;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background: white;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 8px;
 }
-.btn-secondary:hover { background:#f0f0f0; }
+
+.btn-secondary:hover {
+    background: #f0f0f0;
+}
+
+/* =========================
+   FORMS
+========================= */
 
 .form-label {
-    display:block;
-    margin-bottom:6px;
-    font-weight:600;
-    color:#555;
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #555;
 }
 
 .form-input {
-    width:100%;
-    padding:10px 12px;
-    border:1px solid #ddd;
-    border-radius:4px;
-    font-size:15px;
-    margin-bottom:16px;
-}
-.form-input:focus {
-    border-color:#0d6efd;
-    outline:none;
-    box-shadow:0 0 0 2px rgba(13,110,253,.15);
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    margin-bottom: 16px;
+    background: white;
 }
 
-.text-danger { color:#dc3545; }
-.error { color:#dc3545; margin-bottom:12px; display:block; }
+.form-input:focus {
+    border-color: #0d6efd;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, .15);
+}
+
+/* =========================
+   MESSAGES
+========================= */
+
+.error {
+    color: #dc3545;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.success {
+    color: #198754;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* =========================
+   FILTER BOX
+========================= */
+
+.filter-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    min-width: 220px;
+}
+
+/* =========================
+   TABLES
+========================= */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th {
+    background: #0d6efd;
+    color: white;
+    text-align: left;
+    padding: 14px;
+}
+
+.table td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.table tr:hover {
+    background: #f8f9fa;
+}
+
+/* =========================
+   CARDS / CONTAINERS
+========================= */
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
