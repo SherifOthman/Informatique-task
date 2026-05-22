@@ -39,7 +39,7 @@
     </div>
 
     <div style="margin-bottom:16px;color:#777;font-size:13px;">
-        Created: <asp:Label ID="lblCreatedDate" runat="server" /> &nbsp;|&nbsp;
+        Created: <asp:Label ID="lblCreatedDate" runat="server" /><br />
         Assigned: <asp:Label ID="lblAssignedDate" runat="server" />
     </div>
 

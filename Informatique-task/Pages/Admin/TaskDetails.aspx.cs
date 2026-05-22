@@ -54,8 +54,8 @@ namespace Informatique_task.Pages.Admin
 
             txtTitle.Text = task.Title;
             txtDescription.Text = task.Description;
-            lblCreatedDate.Text = task.CreatedDate.ToString("yyyy-MM-dd HH:mm");
-            lblAssignedDate.Text = task.AssignedDate.ToString("yyyy-MM-dd HH:mm");
+            lblCreatedDate.Text = task.CreatedDate.ToString("yyyy-MM-dd hh:mm tt");
+            lblAssignedDate.Text = task.AssignedDate.ToString("yyyy-MM-dd hh:mm tt");
 
             previousAssignedToId = task.AssignedToId;
             ddlUsers.SelectedValue = task.AssignedToId.ToString();
