@@ -51,11 +51,9 @@
                 <asp:BoundField DataField="StatusText"
                     HeaderText="Status" />
 
-                <asp:TemplateField HeaderText="Details">
-                    <ItemTemplate>
-                        <a href='TaskDetails.aspx?id=<%# Eval("Id") %>'>Details</a>
-                    </ItemTemplate>
-                </asp:TemplateField>
+                <asp:HyperLinkField DataNavigateUrlFields="Id"
+                    DataNavigateUrlFormatString="TaskDetails.aspx?id={0}"
+                    HeaderText="Details" Text="Details" />
 
             </Columns>
 
