@@ -169,6 +169,9 @@ html, body {
 .field-group {
     margin-bottom: 16px;
 }
+.field-group .form-input {
+    margin-bottom: 0;
+}
 
 .form-label {
     display: block;
