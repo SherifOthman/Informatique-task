@@ -12,19 +12,19 @@
 
 <div class="stats-row">
     <div class="stat-card stat-new">
-        <div class="stat-number"><%= newCount %></div>
+        <div class="stat-number"><asp:Label ID="lblNewCount" runat="server" /></div>
         <div class="stat-label">New</div>
     </div>
     <div class="stat-card stat-progress">
-        <div class="stat-number"><%= inProgressCount %></div>
+        <div class="stat-number"><asp:Label ID="lblInProgressCount" runat="server" /></div>
         <div class="stat-label">In Progress</div>
     </div>
     <div class="stat-card stat-completed">
-        <div class="stat-number"><%= completedCount %></div>
+        <div class="stat-number"><asp:Label ID="lblCompletedCount" runat="server" /></div>
         <div class="stat-label">Completed</div>
     </div>
     <div class="stat-card stat-total">
-        <div class="stat-number"><%= totalCount %></div>
+        <div class="stat-number"><asp:Label ID="lblTotalCount" runat="server" /></div>
         <div class="stat-label">Total Tasks</div>
     </div>
 </div>
@@ -32,8 +32,8 @@
 <div class="quick-actions">
     <h3>Quick Actions</h3>
     <div class="actions-row">
-        <a href="<%= ResolveUrl("~/Pages/Admin/CreateTask.aspx") %>" class="action-btn action-create">+ Create Task</a>
-        <a href="<%= ResolveUrl("~/Pages/Admin/Tasks.aspx") %>" class="action-btn action-view">View All Tasks</a>
+        <asp:HyperLink NavigateUrl="~/Pages/Admin/CreateTask.aspx" runat="server" CssClass="action-btn action-create">+ Create Task</asp:HyperLink>
+        <asp:HyperLink NavigateUrl="~/Pages/Admin/Tasks.aspx" runat="server" CssClass="action-btn action-view">View All Tasks</asp:HyperLink>
     </div>
 </div>
 
