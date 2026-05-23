@@ -2,6 +2,7 @@
 using Informatique_task.Enums;
 using System;
 using System.Linq;
+using System.Web.UI.WebControls;
 
 namespace Informatique_task.Pages.Admin
 {
@@ -13,8 +14,6 @@ namespace Informatique_task.Pages.Admin
         {
             get { return int.Parse(Request.QueryString["id"]); }
         }
-
-        private TaskStatus oldStatus;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -47,7 +46,6 @@ namespace Informatique_task.Pages.Admin
                 btnSave.Visible = false;
                 return;
             }
-            oldStatus = task.Status.ToString();
 
             txtTitle.Text = task.Title;
             txtDescription.Text = task.Description;
