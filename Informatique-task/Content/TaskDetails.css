@@ -9,26 +9,4 @@
     color: #777;
     font-size: 13px;
 }
-.actions-row {
-    display: flex;
-    gap: 12px;
-}
-.actions-row .btn-primary {
-    flex: 1;
-}
-.btn-back {
-    flex: 1;
-    display: block;
-    padding: 8px;
-    background: white;
-    color: #555;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 13px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-}
-.btn-back:hover {
-    background: #f0f0f0;
-}
+

@@ -54,11 +54,15 @@
         <asp:FileUpload ID="fileUpload" runat="server" CssClass="form-input" />
     </div>
 
-    <asp:Button ID="btnCreate" runat="server"
-        Text="Create Task"
-        CssClass="btn-primary"
-        ValidationGroup="Create"
-        OnClick="btnCreate_Click" />
+    <div class="actions-row">
+        <asp:HyperLink NavigateUrl="~/Pages/Admin/Tasks.aspx"
+            runat="server" CssClass="btn-back">Back to Tasks</asp:HyperLink>
+        <asp:Button ID="btnCreate" runat="server"
+            Text="Create Task"
+            CssClass="btn-primary"
+            ValidationGroup="Create"
+            OnClick="btnCreate_Click" />
+    </div>
 </div>
 
 </asp:Content>
