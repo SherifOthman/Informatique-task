@@ -112,7 +112,6 @@
     <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Tasks.css" />
     <Content Include="Content\TaskDetails.css" />
-    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Infrastructure\AdminBasePage.aspx" />
     <Content Include="Infrastructure\BasePage.aspx" />
@@ -132,13 +131,6 @@
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Data\Configurations\TaskItemConfiguration.cs" />
     <Compile Include="Data\Configurations\UserConfiguration.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Enums\TaskStatus.cs" />
     <Compile Include="Enums\UserRole.cs" />
     <Compile Include="Global.asax.cs">
