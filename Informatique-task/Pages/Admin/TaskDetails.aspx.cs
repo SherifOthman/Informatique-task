@@ -15,27 +15,17 @@ namespace Informatique_task.Pages.Admin
             get { return int.Parse(Request.QueryString["id"]); }
         }
 
+        private Models.TaskItem task;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
-            {
-                LoadUsers();
                 LoadTask();
-            }
-        }
-
-        private void LoadUsers()
-        {
-            var users = db.Users.Where(u => u.Role == UserRole.Member).ToList();
-            ddlUsers.DataSource = users;
-            ddlUsers.DataTextField = "FullName";
-            ddlUsers.DataValueField = "Id";
-            ddlUsers.DataBind();
         }
 
         private void LoadTask()
         {
-            var task = db.Tasks.FirstOrDefault(t => t.Id == TaskId);
+            task = db.Tasks.FirstOrDefault(t => t.Id == TaskId);
 
             if (task == null)
             {
@@ -46,6 +36,16 @@ namespace Informatique_task.Pages.Admin
 
             txtTitle.Text = task.Title;
             txtDescription.Text = task.Description;
+
+            bool isCompleted = task.Status == TaskStatus.Completed;
+            if (!isCompleted)
+            {
+                var users = db.Users.Where(u => u.Role == UserRole.Member).ToList();
+                ddlUsers.DataSource = users;
+                ddlUsers.DataTextField = "FullName";
+                ddlUsers.DataValueField = "Id";
+                ddlUsers.DataBind();
+            }
             ddlUsers.SelectedValue = task.AssignedToId.ToString();
 
             ddlStatus.ClearSelection();
@@ -83,8 +83,6 @@ namespace Informatique_task.Pages.Admin
 
             txtTitle.Enabled = isNew;
             txtDescription.Enabled = isNew;
-            rfvTitle.Enabled = isNew;
-            rfvDescription.Enabled = isNew;
             ddlUsers.Enabled = !isCompleted;
             ddlStatus.Enabled = !isCompleted;
             btnSave.Visible = !isCompleted;
@@ -92,7 +90,7 @@ namespace Informatique_task.Pages.Admin
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            var task = db.Tasks.FirstOrDefault(t => t.Id == TaskId);
+            task = db.Tasks.FirstOrDefault(t => t.Id == TaskId);
 
             if (task == null)
             {

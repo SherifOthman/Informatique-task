@@ -33,8 +33,7 @@ namespace Informatique_task.Pages.Admin
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            try
-            {
+           
                 int userId = int.Parse(ddlUsers.SelectedValue);
 
                 if (userId == 0)
@@ -79,11 +78,7 @@ namespace Informatique_task.Pages.Admin
                 db.SaveChanges();
 
                 Response.Redirect(ResolveUrl("~/Pages/Admin/Tasks.aspx"));
-            }
-            catch (Exception ex)
-            {
-                lblMessage.Text = "Error: " + ex.Message;
-            }
+        
         }
     }
 }
