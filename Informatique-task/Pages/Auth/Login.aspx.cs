@@ -12,6 +12,28 @@ namespace Informatique_task.Pages.Auth
 {
     public partial class Login : System.Web.UI.Page
     {
+
+        protected override void OnLoad(EventArgs e)
+        {
+            if (Session["UserId"] != null)
+            {
+                string role = Session["Role"] as string;
+                if (role == UserRole.Admin.ToString())
+                {
+                    Response.Redirect("/Pages/Admin/Dashboard.aspx");
+
+                }
+                else
+                {
+                    Response.Redirect("~/Pages/Member/MyTasks.aspx");
+                }
+
+                return;
+            }
+
+            base.OnLoad(e);
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -33,12 +55,12 @@ namespace Informatique_task.Pages.Auth
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            using(var db = new ApplicationDbContext())
+            using (var db = new ApplicationDbContext())
             {
                 var user = db.Users
                     .FirstOrDefault(x => x.Username == txtUsername.Text.Trim());
 
-                if(user == null)
+                if (user == null)
                 {
                     lblError.Text = "Invalid username or password.";
                     return;
@@ -56,7 +78,7 @@ namespace Informatique_task.Pages.Auth
                 Session["Role"] = user.Role.ToString();
                 Session["FullName"] = user.FullName;
 
-                if(user.Role == UserRole.Admin)
+                if (user.Role == UserRole.Admin)
                 {
                     Response.Redirect("/Pages/Admin/Dashboard.aspx");
                 }

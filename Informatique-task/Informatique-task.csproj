@@ -112,6 +112,8 @@
     <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Tasks.css" />
     <Content Include="Content\TaskDetails.css" />
+    <Content Include="Content\MyTasks.css" />
+    <Content Include="Content\MyTasks.css" />
     <Content Include="Global.asax" />
     <Content Include="Infrastructure\AdminBasePage.aspx" />
     <Content Include="Infrastructure\BasePage.aspx" />
@@ -122,6 +124,7 @@
     <Content Include="Pages\Admin\Tasks.aspx" />
     <Content Include="Pages\Auth\Login.aspx" />
     <Content Include="Pages\Error.aspx" />
+    <Content Include="Pages\Member\MemberTaskDetails.aspx" />
     <Content Include="Pages\Member\MyTasks.aspx" />
     <Content Include="Site.Master">
       <DependentUpon>Site.Master.cs</DependentUpon>
@@ -201,6 +204,13 @@
     </Compile>
     <Compile Include="Pages\Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Member\MemberTaskDetails.aspx.cs">
+      <DependentUpon>MemberTaskDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Member\MemberTaskDetails.aspx.designer.cs">
+      <DependentUpon>MemberTaskDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Member\MyTasks.aspx.cs">
       <DependentUpon>MyTasks.aspx</DependentUpon>
