@@ -20,12 +20,9 @@ namespace Informatique_task.Pages.Admin
             if (!Page.IsPostBack)
             {
                 LoadUsers();
-                LoadStatuses();
                 LoadTask();
             }
         }
-
-        private void LoadStatuses() { }
 
         private void LoadUsers()
         {
@@ -73,15 +70,21 @@ namespace Informatique_task.Pages.Admin
             {
                 lnkAttachment.NavigateUrl = task.AttachmentPath;
                 lnkAttachment.Visible = true;
+                lblNoAttachment.Visible = false;
             }
             else
+            {
                 lnkAttachment.Visible = false;
+                lblNoAttachment.Visible = true;
+            }
 
             bool isNew = task.Status == TaskStatus.New;
             bool isCompleted = task.Status == TaskStatus.Completed;
 
             txtTitle.Enabled = isNew;
             txtDescription.Enabled = isNew;
+            rfvTitle.Enabled = isNew;
+            rfvDescription.Enabled = isNew;
             ddlUsers.Enabled = !isCompleted;
             ddlStatus.Enabled = !isCompleted;
             btnSave.Visible = !isCompleted;
