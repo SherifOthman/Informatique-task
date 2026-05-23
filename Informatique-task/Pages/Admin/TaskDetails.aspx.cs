@@ -1,8 +1,6 @@
 ﻿using Informatique_task.Data;
 using Informatique_task.Enums;
-using Informatique_task.Models;
 using System;
-using System.Data.Entity;
 using System.Linq;
 
 namespace Informatique_task.Pages.Admin
@@ -10,31 +8,31 @@ namespace Informatique_task.Pages.Admin
     public partial class TaskDetails : System.Web.UI.Page
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
-        private int taskId;
-        private int previousAssignedToId;
+
+        private int TaskId
+        {
+            get { return int.Parse(Request.QueryString["id"]); }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!int.TryParse(Request.QueryString["id"], out taskId))
-            {
-                lblMessage.Text = "Invalid task ID.";
-                pnlDetails.Visible = false;
-                return;
-            }
-
-            if (!IsPostBack)
+            if (!Page.IsPostBack)
             {
                 LoadUsers();
+                LoadStatuses();
                 LoadTask();
             }
         }
 
+        private void LoadStatuses()
+        {
+            ddlStatus.DataSource = Enum.GetNames(typeof(TaskStatus));
+            ddlStatus.DataBind();
+        }
+
         private void LoadUsers()
         {
-            var users = db.Users
-                .Where(u => u.Role == UserRole.Member)
-                .ToList();
-
+            var users = db.Users.Where(u => u.Role == UserRole.Member).ToList();
             ddlUsers.DataSource = users;
             ddlUsers.DataTextField = "FullName";
             ddlUsers.DataValueField = "Id";
@@ -43,51 +41,53 @@ namespace Informatique_task.Pages.Admin
 
         private void LoadTask()
         {
-            var task = db.Tasks.Include(t => t.AssignedTo).FirstOrDefault(t => t.Id == taskId);
+            var task = db.Tasks.FirstOrDefault(t => t.Id == TaskId);
 
             if (task == null)
             {
                 lblMessage.Text = "Task not found.";
-                pnlDetails.Visible = false;
+                btnSave.Visible = false;
                 return;
             }
 
             txtTitle.Text = task.Title;
             txtDescription.Text = task.Description;
-            lblCreatedDate.Text = task.CreatedDate.ToString("yyyy-MM-dd h:mm tt");
-            lblAssignedDate.Text = task.AssignedDate.ToString("yyyy-MM-dd h:mm tt");
-
-            previousAssignedToId = task.AssignedToId;
             ddlUsers.SelectedValue = task.AssignedToId.ToString();
-
             ddlStatus.SelectedValue = task.Status.ToString();
+
+            lblCreatedDate.Text = task.CreatedDate.ToString("dd-MM-yyyy h:mm tt");
+            lblAssignedDate.Text = task.AssignedDate.ToString("dd-MM-yyyy h:mm tt");
 
             if (!string.IsNullOrEmpty(task.AttachmentPath))
             {
                 lnkAttachment.NavigateUrl = task.AttachmentPath;
                 lnkAttachment.Visible = true;
-                lblNoAttachment.Visible = false;
             }
             else
-            {
                 lnkAttachment.Visible = false;
-                lblNoAttachment.Visible = true;
-            }
 
             bool isNew = task.Status == TaskStatus.New;
+            bool isCompleted = task.Status == TaskStatus.Completed;
+
             txtTitle.Enabled = isNew;
             txtDescription.Enabled = isNew;
+            ddlUsers.Enabled = !isCompleted;
+            ddlStatus.Enabled = !isCompleted;
+            btnSave.Visible = !isCompleted;
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            var task = db.Tasks.FirstOrDefault(t => t.Id == taskId);
+            var task = db.Tasks.FirstOrDefault(t => t.Id == TaskId);
 
             if (task == null)
             {
                 lblMessage.Text = "Task not found.";
                 return;
             }
+
+            if (task.Status == TaskStatus.Completed)
+                return;
 
             if (task.Status == TaskStatus.New)
             {
@@ -105,6 +105,7 @@ namespace Informatique_task.Pages.Admin
             task.Status = (TaskStatus)Enum.Parse(typeof(TaskStatus), ddlStatus.SelectedValue);
 
             db.SaveChanges();
+
             lblMessage.CssClass = "success";
             lblMessage.Text = "Task updated successfully.";
 

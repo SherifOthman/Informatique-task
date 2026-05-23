@@ -17,7 +17,7 @@
 
     <div class="field-group">
         <label class="form-label">Title</label>
-        <asp:TextBox ID="txtTitle" runat="server" CssClass="form-input"></asp:TextBox>
+        <asp:TextBox ID="txtTitle" runat="server" CssClass="form-input" Enabled="False"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfvTitle" runat="server"
             ControlToValidate="txtTitle"
             ErrorMessage="Title is required."
@@ -29,7 +29,7 @@
         <label class="form-label">Description</label>
         <asp:TextBox ID="txtDescription" runat="server"
             TextMode="MultiLine" Rows="4"
-            CssClass="form-input"></asp:TextBox>
+            CssClass="form-input" Enabled="False"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfvDescription" runat="server"
             ControlToValidate="txtDescription"
             ErrorMessage="Description is required."
@@ -39,12 +39,12 @@
 
     <div class="field-group">
         <label class="form-label">Assigned To</label>
-        <asp:DropDownList ID="ddlUsers" runat="server" CssClass="form-input"></asp:DropDownList>
+        <asp:DropDownList ID="ddlUsers" runat="server" CssClass="form-input" Enabled="False"></asp:DropDownList>
     </div>
 
     <div class="field-group">
         <label class="form-label">Status</label>
-        <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-input">
+        <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-input" Enabled="False">
             <asp:ListItem Value="New">New</asp:ListItem>
             <asp:ListItem Value="InProgress">In Progress</asp:ListItem>
             <asp:ListItem Value="Completed">Completed</asp:ListItem>

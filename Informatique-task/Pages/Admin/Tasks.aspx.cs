@@ -39,10 +39,11 @@ namespace Informatique_task.Pages.Admin
 
         private void LoadStatuses()
         {
-            ddlStatus.Items.Add("All");
-            ddlStatus.Items.Add("New");
-            ddlStatus.Items.Add("InProgress");
-            ddlStatus.Items.Add("Completed");
+            ddlStatus.DataSource =
+            Enum.GetNames(typeof(TaskStatus));
+            ddlStatus.DataBind();
+
+            ddlStatus.Items.Insert(0, "All");
         }
 
         private void LoadTasks()
