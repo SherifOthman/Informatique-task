@@ -19,7 +19,7 @@ namespace Informatique_task.Infrastructure
         {
             if (Session["UserId"] == null)
             {
-                Response.Redirect("~Pages/Auth/Login.aspx");
+                Response.Redirect(ResolveUrl("~/Pages/Auth/Login.aspx"));
                 return;
             }
 

@@ -20,7 +20,7 @@ namespace Informatique_task.Infrastructure
             base.OnLoad(e);
 
             if (!IsAdmin())
-                Response.Redirect("~Pages/Auth/Login.aspx");
+                Response.Redirect(ResolveUrl("~/Pages/Auth/Login.aspx"));
         }
     }
 }
