@@ -14,6 +14,8 @@ namespace Informatique_task.Pages.Admin
             get { return int.Parse(Request.QueryString["id"]); }
         }
 
+        private TaskStatus oldStatus;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -24,11 +26,7 @@ namespace Informatique_task.Pages.Admin
             }
         }
 
-        private void LoadStatuses()
-        {
-            ddlStatus.DataSource = Enum.GetNames(typeof(TaskStatus));
-            ddlStatus.DataBind();
-        }
+        private void LoadStatuses() { }
 
         private void LoadUsers()
         {
@@ -49,11 +47,26 @@ namespace Informatique_task.Pages.Admin
                 btnSave.Visible = false;
                 return;
             }
+            oldStatus = task.Status.ToString();
 
             txtTitle.Text = task.Title;
             txtDescription.Text = task.Description;
             ddlUsers.SelectedValue = task.AssignedToId.ToString();
+
+            ddlStatus.ClearSelection();
+            foreach (ListItem item in ddlStatus.Items)
+                item.Enabled = true;
+
+            if (task.Status == TaskStatus.InProgress)
+                ddlStatus.Items.FindByValue("New").Enabled = false;
+            else if (task.Status == TaskStatus.Completed)
+            {
+                ddlStatus.Items.FindByValue("New").Enabled = false;
+                ddlStatus.Items.FindByValue("InProgress").Enabled = false;
+            }
+
             ddlStatus.SelectedValue = task.Status.ToString();
+
 
             lblCreatedDate.Text = task.CreatedDate.ToString("dd-MM-yyyy h:mm tt");
             lblAssignedDate.Text = task.AssignedDate.ToString("dd-MM-yyyy h:mm tt");
@@ -108,6 +121,8 @@ namespace Informatique_task.Pages.Admin
 
             lblMessage.CssClass = "success";
             lblMessage.Text = "Task updated successfully.";
+
+            //Response.Redirect("~/Pages/Admin/Tasks.aspx");
 
             LoadTask();
         }
