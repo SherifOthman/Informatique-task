@@ -1,11 +1,12 @@
 ﻿using Informatique_task.Data;
 using Informatique_task.Enums;
+using Informatique_task.Infrastructure;
 using System;
 using System.Linq;
 
 namespace Informatique_task.Pages.Admin
 {
-    public partial class Dashboard : System.Web.UI.Page
+    public partial class Dashboard : AdminBasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

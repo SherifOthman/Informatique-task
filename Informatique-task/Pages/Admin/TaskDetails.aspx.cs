@@ -1,5 +1,6 @@
 ﻿using Informatique_task.Data;
 using Informatique_task.Enums;
+using Informatique_task.Infrastructure;
 using Informatique_task.Models;
 using System;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Informatique_task.Pages.Admin
 {
-    public partial class TaskDetails : System.Web.UI.Page
+    public partial class TaskDetails : AdminBasePage
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
 

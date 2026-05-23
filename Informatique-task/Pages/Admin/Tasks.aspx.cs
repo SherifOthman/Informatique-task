@@ -1,5 +1,6 @@
 ﻿using Informatique_task.Data;
 using Informatique_task.Enums;
+using Informatique_task.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace Informatique_task.Pages.Admin
 {
-    public partial class Tasks : System.Web.UI.Page
+    public partial class Tasks : AdminBasePage
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
 

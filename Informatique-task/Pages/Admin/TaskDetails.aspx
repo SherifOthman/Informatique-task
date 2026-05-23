@@ -42,7 +42,7 @@
         <asp:DropDownList ID="ddlUsers" runat="server" CssClass="form-input"></asp:DropDownList>
     </div>
 
-    <div class="field-group">
+        <div class="field-group">
         <label class="form-label">Status</label>
         <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-input">
             <asp:ListItem Value="New">New</asp:ListItem>
