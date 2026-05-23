@@ -28,12 +28,12 @@ namespace Informatique_task.Infrastructure
 
         protected bool IsAdmin()
         {
-            return (UserRole)Session["Role"] == UserRole.Admin;
+            return Session["Role"] != null && (UserRole)Session["Role"] == UserRole.Admin;
         }
 
         protected bool IsMember()
         {
-            return (UserRole)Session["Role"] == UserRole.Member;
+            return Session["Role"] != null && (UserRole)Session["Role"] == UserRole.Member;
         }
     }
 }
