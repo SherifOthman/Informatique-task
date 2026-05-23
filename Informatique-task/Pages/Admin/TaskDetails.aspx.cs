@@ -1,5 +1,6 @@
 ﻿using Informatique_task.Data;
 using Informatique_task.Enums;
+using Informatique_task.Models;
 using System;
 using System.Linq;
 using System.Web.UI.WebControls;
@@ -15,7 +16,7 @@ namespace Informatique_task.Pages.Admin
             get { return int.Parse(Request.QueryString["id"]); }
         }
 
-        private Models.TaskItem task;
+        private TaskItem task;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -79,7 +80,6 @@ namespace Informatique_task.Pages.Admin
             }
 
             bool isNew = task.Status == TaskStatus.New;
-            bool isCompleted = task.Status == TaskStatus.Completed;
 
             txtTitle.Enabled = isNew;
             txtDescription.Enabled = isNew;
