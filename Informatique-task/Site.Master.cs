@@ -13,8 +13,10 @@ namespace Informatique_task
                 lnkDashboard.CssClass += activeClass;
             else if (p.Contains("createtask"))
                 lnkCreate.CssClass += activeClass;
-            else if (p.Contains("tasks"))
+            else if (p.Contains("tasks") && !p.Contains("mytasks"))
                 lnkTasks.CssClass += activeClass;
+            else if (lnkMyTasks != null && p.Contains("mytasks"))
+                lnkMyTasks.CssClass += activeClass;
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)

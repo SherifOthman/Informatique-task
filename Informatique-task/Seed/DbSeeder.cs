@@ -94,7 +94,7 @@ namespace Informatique_task.Seed
 
                 db.SaveChanges();
 
-                // TASKS
+                // TASKS — Ahmed (user1)
                 db.Tasks.Add(new TaskItem
                 {
                     Title = "Prepare Monthly Report",
@@ -104,28 +104,6 @@ namespace Informatique_task.Seed
                     AssignedDate = DateTime.Now.AddDays(-8),
                     CreatedById = admin.Id,
                     AssignedToId = user1.Id
-                });
-
-                db.Tasks.Add(new TaskItem
-                {
-                    Title = "Fix UI Navigation Bug",
-                    Description = "Navbar dropdown not closing on mobile",
-                    Status = TaskStatus.InProgress,
-                    CreatedDate = DateTime.Now.AddDays(-7),
-                    AssignedDate = DateTime.Now.AddDays(-5),
-                    CreatedById = admin.Id,
-                    AssignedToId = user2.Id
-                });
-
-                db.Tasks.Add(new TaskItem
-                {
-                    Title = "Design New Dashboard",
-                    Description = "Create wireframes for the admin dashboard redesign",
-                    Status = TaskStatus.New,
-                    CreatedDate = DateTime.Now.AddDays(-6),
-                    AssignedDate = DateTime.Now.AddDays(-6),
-                    CreatedById = admin.Id,
-                    AssignedToId = user3.Id
                 });
 
                 db.Tasks.Add(new TaskItem
@@ -141,35 +119,36 @@ namespace Informatique_task.Seed
 
                 db.Tasks.Add(new TaskItem
                 {
-                    Title = "Update User Documentation",
-                    Description = "Revise user guide for the new features",
+                    Title = "Inventory Audit",
+                    Description = "Audit current inventory records and fix discrepancies",
+                    Status = TaskStatus.New,
+                    CreatedDate = DateTime.Now.AddDays(-15),
+                    AssignedDate = DateTime.Now.AddDays(-10),
+                    CreatedById = admin.Id,
+                    AssignedToId = user1.Id
+                });
+
+                db.Tasks.Add(new TaskItem
+                {
+                    Title = "Vendor Contract Review",
+                    Description = "Review and renew vendor contracts for next quarter",
+                    Status = TaskStatus.New,
+                    CreatedDate = DateTime.Now.AddDays(-7),
+                    AssignedDate = DateTime.Now.AddDays(-5),
+                    CreatedById = admin.Id,
+                    AssignedToId = user1.Id
+                });
+
+                // TASKS — Mona (user2)
+                db.Tasks.Add(new TaskItem
+                {
+                    Title = "Fix UI Navigation Bug",
+                    Description = "Navbar dropdown not closing on mobile",
                     Status = TaskStatus.InProgress,
-                    CreatedDate = DateTime.Now.AddDays(-5),
-                    AssignedDate = DateTime.Now.AddDays(-4),
+                    CreatedDate = DateTime.Now.AddDays(-7),
+                    AssignedDate = DateTime.Now.AddDays(-5),
                     CreatedById = admin.Id,
-                    AssignedToId = user4.Id
-                });
-
-                db.Tasks.Add(new TaskItem
-                {
-                    Title = "Email Service Integration",
-                    Description = "Integrate SendGrid for transactional emails",
-                    Status = TaskStatus.New,
-                    CreatedDate = DateTime.Now.AddDays(-3),
-                    AssignedDate = DateTime.Now.AddDays(-3),
-                    CreatedById = admin.Id,
-                    AssignedToId = user5.Id
-                });
-
-                db.Tasks.Add(new TaskItem
-                {
-                    Title = "Performance Audit",
-                    Description = "Audit page load times and recommend optimizations",
-                    Status = TaskStatus.New,
-                    CreatedDate = DateTime.Now.AddDays(-2),
-                    AssignedDate = DateTime.Now.AddDays(-2),
-                    CreatedById = admin.Id,
-                    AssignedToId = user6.Id
+                    AssignedToId = user2.Id
                 });
 
                 db.Tasks.Add(new TaskItem
@@ -185,6 +164,29 @@ namespace Informatique_task.Seed
 
                 db.Tasks.Add(new TaskItem
                 {
+                    Title = "Update Login Page Styles",
+                    Description = "Apply new branding to the login page",
+                    Status = TaskStatus.New,
+                    CreatedDate = DateTime.Now.AddDays(-9),
+                    AssignedDate = DateTime.Now.AddDays(-7),
+                    CreatedById = admin.Id,
+                    AssignedToId = user2.Id
+                });
+
+                // TASKS — Khaled (user3)
+                db.Tasks.Add(new TaskItem
+                {
+                    Title = "Design New Dashboard",
+                    Description = "Create wireframes for the admin dashboard redesign",
+                    Status = TaskStatus.New,
+                    CreatedDate = DateTime.Now.AddDays(-6),
+                    AssignedDate = DateTime.Now.AddDays(-6),
+                    CreatedById = admin.Id,
+                    AssignedToId = user3.Id
+                });
+
+                db.Tasks.Add(new TaskItem
+                {
                     Title = "Deploy Staging Environment",
                     Description = "Set up staging server with latest build",
                     Status = TaskStatus.Completed,
@@ -192,6 +194,29 @@ namespace Informatique_task.Seed
                     AssignedDate = DateTime.Now.AddDays(-19),
                     CreatedById = admin.Id,
                     AssignedToId = user3.Id
+                });
+
+                db.Tasks.Add(new TaskItem
+                {
+                    Title = "Database Migration Plan",
+                    Description = "Plan schema migration for new feature module",
+                    Status = TaskStatus.New,
+                    CreatedDate = DateTime.Now.AddDays(-12),
+                    AssignedDate = DateTime.Now.AddDays(-10),
+                    CreatedById = admin.Id,
+                    AssignedToId = user3.Id
+                });
+
+                // TASKS — Nora (user4)
+                db.Tasks.Add(new TaskItem
+                {
+                    Title = "Update User Documentation",
+                    Description = "Revise user guide for the new features",
+                    Status = TaskStatus.InProgress,
+                    CreatedDate = DateTime.Now.AddDays(-5),
+                    AssignedDate = DateTime.Now.AddDays(-4),
+                    CreatedById = admin.Id,
+                    AssignedToId = user4.Id
                 });
 
                 db.Tasks.Add(new TaskItem
@@ -207,6 +232,29 @@ namespace Informatique_task.Seed
 
                 db.Tasks.Add(new TaskItem
                 {
+                    Title = "GDPR Compliance Check",
+                    Description = "Ensure data handling complies with GDPR requirements",
+                    Status = TaskStatus.New,
+                    CreatedDate = DateTime.Now.AddDays(-8),
+                    AssignedDate = DateTime.Now.AddDays(-6),
+                    CreatedById = admin.Id,
+                    AssignedToId = user4.Id
+                });
+
+                // TASKS — Sami (user5)
+                db.Tasks.Add(new TaskItem
+                {
+                    Title = "Email Service Integration",
+                    Description = "Integrate SendGrid for transactional emails",
+                    Status = TaskStatus.New,
+                    CreatedDate = DateTime.Now.AddDays(-3),
+                    AssignedDate = DateTime.Now.AddDays(-3),
+                    CreatedById = admin.Id,
+                    AssignedToId = user5.Id
+                });
+
+                db.Tasks.Add(new TaskItem
+                {
                     Title = "API Rate Limiting",
                     Description = "Implement rate limiting on public API endpoints",
                     Status = TaskStatus.New,
@@ -218,11 +266,45 @@ namespace Informatique_task.Seed
 
                 db.Tasks.Add(new TaskItem
                 {
+                    Title = "Logging System Upgrade",
+                    Description = "Upgrade logging framework to structured logging",
+                    Status = TaskStatus.InProgress,
+                    CreatedDate = DateTime.Now.AddDays(-6),
+                    AssignedDate = DateTime.Now.AddDays(-4),
+                    CreatedById = admin.Id,
+                    AssignedToId = user5.Id
+                });
+
+                // TASKS — Layla (user6)
+                db.Tasks.Add(new TaskItem
+                {
+                    Title = "Performance Audit",
+                    Description = "Audit page load times and recommend optimizations",
+                    Status = TaskStatus.New,
+                    CreatedDate = DateTime.Now.AddDays(-2),
+                    AssignedDate = DateTime.Now.AddDays(-2),
+                    CreatedById = admin.Id,
+                    AssignedToId = user6.Id
+                });
+
+                db.Tasks.Add(new TaskItem
+                {
                     Title = "Mobile Responsive Fixes",
                     Description = "Fix layout issues on screens under 768px",
                     Status = TaskStatus.InProgress,
                     CreatedDate = DateTime.Now.AddDays(-8),
                     AssignedDate = DateTime.Now.AddDays(-7),
+                    CreatedById = admin.Id,
+                    AssignedToId = user6.Id
+                });
+
+                db.Tasks.Add(new TaskItem
+                {
+                    Title = "Cross-browser Testing",
+                    Description = "Test application in Chrome, Firefox, Safari, and Edge",
+                    Status = TaskStatus.New,
+                    CreatedDate = DateTime.Now.AddDays(-14),
+                    AssignedDate = DateTime.Now.AddDays(-10),
                     CreatedById = admin.Id,
                     AssignedToId = user6.Id
                 });
