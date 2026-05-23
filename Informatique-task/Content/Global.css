@@ -169,23 +169,6 @@ html, body {
 .actions-row .btn-primary {
     flex: 1;
 }
-.btn-danger {
-    flex: 1;
-    display: block;
-    padding: 8px;
-    background: #dc3545;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 13px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-}
-.btn-danger:hover {
-    background: #c82333;
-}
-
 .btn-back {
     flex: 1;
     display: block;

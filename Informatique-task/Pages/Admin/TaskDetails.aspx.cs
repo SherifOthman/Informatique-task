@@ -85,7 +85,6 @@ namespace Informatique_task.Pages.Admin
             txtDescription.Enabled = isNew;
             ddlUsers.Enabled = !isCompleted;
             ddlStatus.Enabled = !isCompleted;
-            btnDelete.Visible = isNew;
             btnSave.Visible = !isCompleted;
         }
 
@@ -125,19 +124,6 @@ namespace Informatique_task.Pages.Admin
             //Response.Redirect("~/Pages/Admin/Tasks.aspx");
 
             LoadTask();
-        }
-
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            task = db.Tasks.FirstOrDefault(t => t.Id == TaskId);
-
-            if (task != null)
-            {
-                db.Tasks.Remove(task);
-                db.SaveChanges();
-            }
-
-            Response.Redirect(ResolveUrl("~/Pages/Admin/Tasks.aspx"));
         }
     }
 }
