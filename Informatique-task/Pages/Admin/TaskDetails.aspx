@@ -65,6 +65,11 @@
     <div class="actions-row">
         <asp:HyperLink NavigateUrl="~/Pages/Admin/Tasks.aspx"
             runat="server" CssClass="btn-back">Back to Tasks</asp:HyperLink>
+        <asp:Button ID="btnDelete" runat="server"
+            Text="Delete Task"
+            CssClass="btn-danger"
+            OnClick="btnDelete_Click"
+            OnClientClick="return confirm('Are you sure you want to delete this task?');" />
         <asp:Button ID="btnSave" runat="server"
             Text="Save Changes"
             CssClass="btn-primary"
