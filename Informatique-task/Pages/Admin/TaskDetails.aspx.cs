@@ -13,7 +13,12 @@ namespace Informatique_task.Pages.Admin
 
         private int TaskId
         {
-            get { return int.Parse(Request.QueryString["id"]); }
+            get
+            {
+                int id;
+                int.TryParse(Request.QueryString["id"], out id);
+                return id;
+            }
         }
 
         private TaskItem task;
@@ -31,7 +36,8 @@ namespace Informatique_task.Pages.Admin
             if (task == null)
             {
                 lblMessage.Text = "Task not found.";
-                btnSave.Visible = false;
+                //btnSave.Visible = false;
+                pnlDetails.Visible = false;
                 return;
             }
 
